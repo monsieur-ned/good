@@ -1,0 +1,145 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+<section id="hero">
+  <div class="bg-cover-hero" class="d-flex align-items-center">
+    <div class="container">
+    <div class="row">
+      <div class="col-lg-6 d-flex flex-column justify-content-start pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+
+        <h1>Good Association</h1>
+        <h2>We are team of talented designers making websites with Bootstrap</h2>
+
+        <div class="d-flex justify-content-start justify-content-lg-start">
+          <a href="{% url 'about' %}" class="btn-danger btn-about">En savoir plus</a>
+        </div>
+
+      </div>
+
+      <!-- <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+        <img src="{% static '' %}img/hero-img.png" class="img-fluid animated" alt="">
+      </div> -->
+
+    </div>
+  </div>
+  </div>
+</section>
+
+
+{% if messages %}
+<section class="m-0 p-0">
+  <div class="m-0 p-0">
+  {% for message in messages %}
+
+      {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+          <div class="px-3 alert alert-danger alert-dismissible  m-0 py-3 fade show" role="alert">
+              <strong>Erreur !</strong> {{message}}
+          </div>
+
+      {% elif message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+
+          <div class="px-3 alert alert-success alert-dismissible m-0 py-3  fade show" role="alert">
+                <strong>Reussie !</strong> {{message}}
+          </div>
+      {% endif %}
+
+  {% endfor %}          
+  </div>
+</section>
+{% endif %}
+
+{% include 'components/about-component.html' %}
+{% include 'components/branches-component.html' %}
+
+<section id="cta" class="cta">
+  <div class="container" data-aos="zoom-in">
+
+    <div class="row">
+      <div class="col-lg-6 text-center text-lg-start compteur-info my-md-0 mb-3">
+          <h1 class="number-inc" data-target="6">0</h1>
+          <h2>Ans d'existance</h2>
+      </div>
+
+      <div class="col-lg-6 text-center text-lg-start compteur-info">
+          <h1 class="number-inc" data-target="3000">0</h1>
+          <h2>Personnes formées</h2>          
+        </div>
+    </div>
+
+  </div>
+</section>
+
+{% if actualites %}
+<section id="services" class="services">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+      <h2>Actualités recentes</h2>
+    </div>
+
+    <div class="row">
+
+      {% for actualite in actualites %}
+
+      <a href="{% url 'actualite-detail' actualite.id %}" class="actualite col-xl-3 col-md-6 d-flex align-items-stretch mb-md-2 mb-3" data-aos="zoom-in" data-aos-delay="100">
+
+        <div class="icon-box">
+
+        <img src="{{actualite.image.url}}" class="m-0 p-0" style="width: 100%; height: 160px; object-fit: cover; border-top-right-radius: 5px; border-top-left-radius: 5px;">
+        
+        <div class="d-flex flex-column justify-content-start align-items-start mt-2 box-info-actualite m-0" style="position: relative;">
+
+          <span class="date-actualite bg-danger px-3 py-1 my-0" style="font-size: 11px; color: #fefefe; position: absolute; top: -33px;">{{actualite.date|date:"d, M Y"}}</span>
+
+
+          <h4 class="py-2 px-2" style="color: #000033; font-weight: 700; font-size: 17px;">{{actualite.titre|truncatechars:"60"}}</h4>
+
+        </div>
+
+        </div>
+      </a>
+
+      {% endfor%}
+
+    </div>
+
+    {% if actualites_count > 4 %}
+    <div class="row my-3">
+      <div class="col-md-12 d-flex justify-content-end"  data-aos="fade-up" data-aos-delay="200">
+        <a href="{% url 'actualites' %}" class="btn btn-danger px-5">Voir plus</a>
+      </div>
+    </div>
+    {% endif %}
+
+  </div>
+</section>
+{% endif %}
+
+<section id="cta" class="cta">
+  <div class="container" data-aos="zoom-in">
+
+    <div class="row">
+      <div class="col-lg-7 text-center text-lg-start" id="newsletter">
+        <h3>Newsletter</h3>
+        <p>Rejoignez la liste de nos abonnés afin de ne rien manqué sur nos actualités et nouveauté de l'association et ses branches.</p>
+
+      </div>
+      <div class="col-lg-5 cta-btn-container text-center">
+        <form action="{% url 'addNewsLetter' %}" method="post">
+          {% csrf_token %}
+          <div class="cta-btn d-flex flex-row">
+            <input type="email" name="email" placeholder="exemple@gmail.com">
+            <button class="bg-danger">
+              <i>Send</i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

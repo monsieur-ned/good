@@ -1,0 +1,68 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+
+
+{% include 'components/header.html' %}
+
+{% if actualites %}
+<section id="services" class="services">
+  <div class="container" data-aos="fade-up">
+
+    <div class="row">
+
+      {% for actualite in actualites %}
+
+      
+      <a href="{% url 'actualite-detail' actualite.id %}" class="actualite col-xl-3 col-md-6 d-flex align-items-stretch mb-md-2 mb-3" data-aos="zoom-in" data-aos-delay="100">
+
+        <div class="icon-box">
+
+        <img src="{{actualite.image.url}}" class="m-0 p-0" style="width: 100%; height: 160px; object-fit: cover; border-top-right-radius: 5px; border-top-left-radius: 5px;">
+        
+        <div class="d-flex flex-column justify-content-start align-items-start mt-2 box-info-actualite m-0" style="position: relative;">
+
+          <span class="date-actualite bg-danger px-3 py-1 my-0" style="font-size: 11px; color: #fefefe; position: absolute; top: -33px;">{{actualite.date|date:"d, M Y"}}</span>
+
+
+          <h4 class="py-2 px-2" style="color: #000033; font-weight: 700; font-size: 17px;">{{actualite.titre|truncatechars:"60"}}</h4>
+
+        </div>
+
+        </div>
+      </a>
+
+      {% endfor%}
+
+    </div>
+
+  </div>
+</section>
+{% endif %}
+
+<section id="cta" class="cta">
+  <div class="container" data-aos="zoom-in">
+
+    <div class="row">
+      <div class="col-lg-7 text-center text-lg-start">
+        <h3>Newsletter</h3>
+        <p>Rejoignez la liste de nos abonnés afin de ne rien manqué sur nos actualités et nouveauté de l'association et ses branches.</p>
+      </div>
+      <div class="col-lg-5 cta-btn-container text-center">
+        <form>
+          <div class="cta-btn d-flex flex-row">
+            <input type="email" name="" placeholder="exemple@gmail.com">
+            <button class="bg-danger">
+              <i>Send</i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

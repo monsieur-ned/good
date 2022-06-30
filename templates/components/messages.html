@@ -1,0 +1,22 @@
+<div class="row py-2">
+    <div class="col-md-8 offset-md-2 wow fadeInUp px-md-4" data-aos="fade-up" data-wow-delay="0.1s">
+        {% if messages %}
+                {% for message in messages %}
+
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                        <div class="mx-md-5 alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>Erreur !</strong> {{message}}
+                        </div>
+
+                    {% elif message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+
+                        <div class="mx-md-5 alert alert-success alert-dismissible fade show" role="alert">
+                              <strong>Reussie !</strong> {{message}}
+                        </div>
+                    {% endif %}
+
+                {% endfor %}
+
+            {% endif %}
+    </div>
+</div>

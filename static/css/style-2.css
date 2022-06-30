@@ -1,0 +1,54 @@
+*{
+	box-sizing: border-box;
+}
+
+#form-inscription label{
+	cursor: pointer;
+	font-size: 13px;
+}
+
+#form-inscription input, button, #form-inscription input::placeholder, #form-inscription select, #form-inscription select option{
+	font-size: 14px;
+}
+
+.hero-header{
+	background-color: #003366;
+}
+
+.hero-header h1{
+	font-size: 30px;
+	text-transform: uppercase;
+}
+
+.hero-header ol li{
+	font-size: 16px;
+	text-transform: capitalize;
+}
+
+.footer-section{
+	background-color: #003366;
+}
+
+.link-social{
+    display: inline-flex; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: #f7f7f7; 
+    width: 30px; 
+    height: 30px; 
+    border-radius: 50%;
+    margin: 5px;
+
+    color: #003366;
+    text-decoration: none;
+}
+
+.link-social:hover{
+	background-color: #f3f3f3;
+	color: #003366;
+}
+
+/**/
+.actualite .icon-box{
+	position: relative;
+}

@@ -1,0 +1,32 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+
+{% include 'components/header.html' %}
+
+{% include 'components/about-component.html' %}
+{% include 'components/branches-component.html' %}
+
+<section id="cta" class="cta">
+  <div class="container" data-aos="zoom-in">
+
+    <div class="row">
+      <div class="col-lg-6 text-center text-lg-start compteur-info my-md-0 mb-3">
+          <h1>6</h1>
+          <h2>Ans d'existance</h2>
+      </div>
+
+      <div class="col-lg-6 text-center text-lg-start compteur-info">
+          <h1>33K</h1>
+          <h2>Personnes formées</h2>          
+        </div>
+    </div>
+
+  </div>
+</section>
+
+{% include 'components/equipe.html' %}
+
+{% endblock %}

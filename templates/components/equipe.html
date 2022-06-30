@@ -1,0 +1,39 @@
+{% load static %}
+{% if equipe %}
+<section id="services" class="services">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+      <h2>{{titre_equipe}}</h2>
+      <p>{{description_equipe}}</p>
+    </div>
+
+    <div class="row">
+
+
+      <!-- profile -->
+      {% for membre in equipe %}
+      <div class="col-xl-3 col-md-3 d-flex align-items-stretch mb-md-2 mb-3" data-aos="zoom-in" data-aos-delay="100" style="background-image: url({% static '' %}img/team/team-1.jp); background-size: cover; background-position: center;">
+
+        <div class="icon-box">
+
+        <img src="{{membre.profil.url}}" class="m-0 p-0" style="width: 100%; object-fit: contain; border-top-right-radius: 5px; border-top-left-radius: 5px;">
+        
+        <div class="d-flex flex-column justify-content-center py-2 align-items-center mt-2 box-info-actualite m-0">
+
+          <h4 class="px-2" style="color: #000033; font-weight: 700; font-size: 18px; text-align: center;">{{membre.nom}}</h4>
+
+          <span class="date-actualite text-danger px-3 my-0" style="font-size: 14px; color: #fefefe;">{{membre.fonction}}</span>
+
+        </div>
+
+        </div>
+      </div>
+      {% endfor %}
+      <!-- endprofile -->
+
+    </div>
+
+  </div>
+</section>
+{% endif %}

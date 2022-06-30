@@ -1,0 +1,56 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+{% load social_share %}
+{% load humanize %}
+
+
+{% block title %}
+    {{actualite.titre}}
+{% endblock %}
+
+
+
+
+{% block content %}
+
+
+{% include 'components/header.html' %}
+
+<div class="container-xxl my-5">
+    <div class="container px-md-5">
+        <div class="row px-md-5" data-aos="fade-up" data-aos-delay="200">
+            <img src="{{actualite.image.url}}" class="col-12" style="max-height: 350px; object-fit: cover; object-position: center;">
+        </div>
+
+        <div class="bg-danger mb-1 mx-md-5" align="center" style="max-width: 160px;" data-aos="fade-up" data-aos-delay="200">
+            <span class="text-light text-center" style="font-size: 13px;">{{actualite.date|naturaltime}}</span>
+        </div>
+
+        <div class="row px-md-5" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="my-2">{{actualite.titre}}</h3>
+        </div>
+
+
+        <div class="row mt-3 px-md-5" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-12">
+                {{actualite.description|safe}}
+            </div>
+        </div>
+
+        <div class="row mt-3 px-md-5" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-12 p-5 pt-1 pb-0 blog-share">
+                <h5 class="text-center">Partagez autour de vous! <br><br>
+                    
+                  {% post_to_facebook object_or_url "<i class='fa fa-facebook-f'></i>" "text-center partage-1 btn btn-primary" %}
+
+                  {% post_to_whatsapp object_or_url "<i class='fa fa-whatsapp'></i>" "text-center partage-2 btn btn-success" %}
+
+                  {% post_to_telegram "{{detail.titre}}" object_or_url '<i class="fa fa-telegram"></i>' "text-center partage-3 btn btn-primary" %}
+
+
+                </h5>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}

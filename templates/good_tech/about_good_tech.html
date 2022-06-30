@@ -1,0 +1,131 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+
+
+{% include 'components/header.html' %}
+
+<section id="why-us" class="why-us section-bg">
+  <div class="container" data-aos="fade-up">
+
+   <div class="row">
+      <img src="{% static '' %}img/NEW-LOGO-TECH.png" class="col-md-5 img-about">
+    
+      <div class="col-md-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-md-1">
+
+        <h5>Notre mission</h5>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+
+        <h5>Notre expertise</h5>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+
+        <h5>Notre point de vue</h5>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+        
+        <div class="d-flex justify-content-end">
+          <a href="{% url 'preinscription-good-tech' %}" class="btn btn-danger col-md-3 col-lg-3 col-12 py-2">Préinscription</a>
+        </div>
+      </div>
+
+   </div>
+
+  </div>
+</section>
+
+<!-- <section id="services" class="services">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+      <h2>Nos Langues</h2>
+      <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate.</p>
+    </div>
+
+    <div class="row">
+
+      <div class="col-xl-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100" style="background-color: #fff; height: 250px; background-size: contain;">
+        
+        <img src="{% static '' %}img/NEW-LOGO-TECH.png" style="object-fit: contain; width: 100%;">
+        <div class="icon-box" style="position: absolute; bottom: 0;">
+          <div class="d-flex flex-row justify-content-evenly align-items-center mt-2 box-info py-1" style="height: 40px;">
+              <span class="text-light">Anglais</span>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="col-xl-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100" style="background-color: #fff; height: 250px; background-size: contain;">
+        
+        <img src="{% static '' %}img/NEW-LOGO-TECH.png" style="object-fit: contain; width: 100%;">
+        <div class="icon-box" style="position: absolute; bottom: 0;">
+          <div class="d-flex flex-row justify-content-evenly align-items-center mt-2 box-info py-1" style="height: 40px;">
+              <span class="text-light">Chinois</span>
+          </div>
+
+        </div>
+      </div>
+
+    <div class="col-xl-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100" style="background-color: #fff; height: 250px; background-size: contain;">
+            
+        <img src="{% static '' %}img/NEW-LOGO-TECH.png" style="object-fit: contain; width: 100%;">
+        <div class="icon-box" style="position: absolute; bottom: 0;">
+          <div class="d-flex flex-row justify-content-evenly align-items-center mt-2 box-info py-1" style="height: 40px;">
+              <span class="text-light">Espagnol</span>
+          </div>
+
+        </div>
+      </div>
+
+    <div class="col-xl-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100" style="background-color: #fff; height: 250px; background-size: contain;">
+            
+        <img src="{% static '' %}img/NEW-LOGO-TECH.png" style="object-fit: contain; width: 100%;">
+        <div class="icon-box" style="position: absolute; bottom: 0;">
+          <div class="d-flex flex-row justify-content-evenly align-items-center mt-2 box-info py-1" style="height: 40px;">
+              <span class="text-light">Italien</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+
+
+    </div>
+    
+
+    </div>
+
+  </div>
+</section> -->
+
+
+<section id="cta" class="cta">
+  <div class="container" data-aos="zoom-in">
+
+    <div class="row">
+      <div class="col-lg-6 text-center text-lg-start compteur-info my-md-0 mb-3">
+          <h1 class="number-inc" data-target="6">0</h1>
+          <h2>Ans d'existance</h2>
+      </div>
+
+      <div class="col-lg-6 text-center text-lg-start compteur-info">
+          <h1 class="number-inc" data-target="150">0</h1>
+          <h2>Personnes formées</h2>          
+        </div>
+    </div>
+
+  </div>
+</section>
+
+{% include 'components/equipe.html' %}
+
+{% endblock %}
