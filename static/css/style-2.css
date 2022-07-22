@@ -52,3 +52,70 @@
 .actualite .icon-box{
 	position: relative;
 }
+
+.title-about, .title-about-2{
+	display: flex;
+	max-width: 200px;
+	color: #f7f7f7;
+	text-transform: uppercase;
+	align-items: center;
+	padding: 3px 15px;
+	background-color: #003366;
+}
+
+.title-about{
+	background-color: #003366;
+}
+
+.title-about-2{
+	width: 140px;
+}
+
+.title{
+	background-color: #003366;
+	width: 300px;
+	padding: 3px 15px;
+	text-transform: capitalize;
+}
+
+.title-2{
+	width: 180px;
+	padding: 3px 15px;
+	text-transform: capitalize;
+	margin-top: 10px;
+}
+
+.text-list-membre{
+	font-size: 18px;
+	font-weight: bold;
+	margin-right: 15px;
+	color: #000033;
+}
+
+.item-list-membre{
+	margin: 10px 0;
+	display: flex;
+	font-size: 14px;
+	text-align: left;
+
+}
+
+.div-devenir-membre ul{
+	padding: 0;
+}
+
+.div-devenir-membre ul li{
+	font-size: 14px;
+}
+
+.div-devenir-membre ul li span{
+	font-weight: bold;
+	color: #000033;
+}
+
+@media (max-width: 792px){
+	.para-justify{
+		text-align: center;
+	}
+}
+
